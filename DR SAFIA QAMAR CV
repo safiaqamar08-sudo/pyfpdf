@@ -1,0 +1,142 @@
+from fpdf import FPDF
+
+pdf = FPDF()
+pdf.set_auto_page_break(auto=True, margin=15)
+
+# -------- COVER LETTER PAGE --------
+pdf.add_page()
+pdf.set_font("Times", 'B', 16)
+pdf.cell(0, 10, "Dr. Safia Qamar", ln=True, align='C')
+pdf.set_font("Times", '', 12)
+pdf.cell(0, 8, "Riyadh, Kingdom of Saudi Arabia", ln=True, align='C')
+pdf.cell(0, 8, "Email: safiaqamar08@gmail.com | Phone: 0538570542", ln=True, align='C')
+pdf.ln(15)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Cover Letter", ln=True, align='L')
+pdf.ln(5)
+
+pdf.set_font("Times", '', 12)
+cover_text = """\
+To the Human Resources Department,
+Hospitals across the Kingdom of Saudi Arabia
+
+Dear Sir/Madam,
+
+I am writing to express my keen interest in the position of Senior Registrar – Internal Medicine. 
+I am a Pakistani Internal Medicine Specialist currently residing in Riyadh, licensed by both 
+the Pakistan Medical & Dental Council (PMDC) and the Saudi Commission for Health Specialties (SCFHS). 
+Having recently completed my FCPS (Internal Medicine) from the College of Physicians and Surgeons Pakistan, 
+I bring over five years of progressive clinical experience in inpatient, outpatient, and emergency care.
+
+Throughout my training and practice, I have managed diverse medical cases with a focus on evidence-based, 
+patient-centered management. My rotations in neurology, oncology, psychiatry, gastroenterology, pulmonology, 
+cardiology, and ICU have strengthened my diagnostic and procedural skills. I also have a publication on 
+a rare case of Fanconi Syndrome with Hypogonadotrophic Hypogonadism, reflecting my continued engagement in research.
+
+I am deeply committed to clinical excellence, teamwork, and continuous learning. With my clinical expertise 
+and passion for patient care, I am confident in my ability to contribute effectively to your institution’s 
+standards of quality healthcare delivery. I am available to join immediately.
+
+Thank you for considering my application. I would welcome the opportunity to discuss how my experience 
+and skills can be of value to your esteemed organization.
+
+Yours sincerely,
+Dr. Safia Qamar
+"""
+pdf.multi_cell(0, 8, cover_text)
+
+# -------- CV PAGE --------
+pdf.add_page()
+pdf.set_font("Times", 'B', 16)
+pdf.cell(0, 10, "Curriculum Vitae", ln=True, align='C')
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Personal Information", ln=True)
+pdf.set_font("Times", '', 12)
+pdf.multi_cell(0, 8, "Name: Dr. Safia Qamar\nLocation: Riyadh, KSA\nEmail: safiaqamar08@gmail.com\nPhone: 0538570542\nPMDC License: [Number]\nSCFHS License: [Number]\nNationality: Pakistani\nAvailability: Immediately")
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Professional Summary", ln=True)
+pdf.set_font("Times", '', 12)
+summary_text = """\
+Dynamic and dedicated Internal Medicine Specialist with comprehensive training and over five years of 
+progressive clinical experience across inpatient, outpatient, and emergency settings. Demonstrated excellence 
+in diagnostic reasoning, multidisciplinary patient management, and leadership within tertiary care environments. 
+Adept at handling complex medical cases, guiding junior staff, and maintaining the highest standards of 
+patient-centered care. Recognized for strong academic foundation, research involvement, and passion for 
+continuous learning and innovation in clinical practice. Currently residing in Riyadh, KSA, and available to join immediately.
+"""
+pdf.multi_cell(0, 8, summary_text)
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Education", ln=True)
+pdf.set_font("Times", '', 12)
+pdf.multi_cell(0, 8, "FCPS (Internal Medicine) – College of Physicians and Surgeons Pakistan, July 2019 – May 2024\nMBBS – University of Health Sciences, Pakistan")
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Licensure", ln=True)
+pdf.set_font("Times", '', 12)
+pdf.multi_cell(0, 8, "• Pakistan Medical & Dental Council (PMDC) — Full License\n• Saudi Commission for Health Specialties (SCFHS) — Licensed Physician")
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Clinical Experience", ln=True)
+pdf.set_font("Times", '', 12)
+experience_text = """\
+Registrar / Resident – Internal Medicine
+[Hospital Name], [City, Country] — July 2019 – May 2024
+• Delivered high-quality care to diverse patient populations across medical wards, OPDs, and emergency units.
+• Led daily ward rounds, participated in multidisciplinary team discussions, and coordinated complex patient management.
+• Managed emergency presentations including cardiac, respiratory, metabolic, and infectious emergencies.
+• Supervised interns and junior doctors, promoting evidence-based and ethical clinical practice.
+• Ensured continuity of care through effective communication, documentation, and patient education.
+
+Rotations During FCPS Training:
+Neurology, Oncology, Psychiatry, Gastroenterology, Pulmonology, Cardiology, Intensive Care Unit (ICU)
+"""
+pdf.multi_cell(0, 8, experience_text)
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Research & Publications", ln=True)
+pdf.set_font("Times", '', 12)
+pdf.multi_cell(0, 8, "• Rare Case Report: Fanconi Syndrome with Hypogonadotrophic Hypogonadism, published in [Journal Name, Year]")
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Certifications", ln=True)
+pdf.set_font("Times", '', 12)
+pdf.multi_cell(0, 8, "• Basic Life Support (BLS)\n• Advanced Cardiac Life Support (ACLS)\n• [Add others if applicable]")
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Professional Skills", ln=True)
+pdf.set_font("Times", '', 12)
+skills = """\
+• Comprehensive patient assessment and management
+• Emergency and critical care medicine
+• Clinical procedures: central line insertion, lumbar puncture, pleural tapping, ABG sampling
+• Teaching, mentoring, and supervision of junior doctors
+• Leadership and multidisciplinary teamwork
+• Strong communication and decision-making skills
+"""
+pdf.multi_cell(0, 8, skills)
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "Professional Memberships", ln=True)
+pdf.set_font("Times", '', 12)
+pdf.multi_cell(0, 8, "• Fellow, College of Physicians & Surgeons Pakistan (FCPS – Internal Medicine)\n• Member, [Any Internal Medicine Society or Association]")
+pdf.ln(5)
+
+pdf.set_font("Times", 'B', 14)
+pdf.cell(0, 10, "References", ln=True)
+pdf.set_font("Times", '', 12)
+pdf.multi_cell(0, 8, "Available upon request.")
+
+pdf.output("Dr_Safia_Qamar_CV.pdf")
